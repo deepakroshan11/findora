@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Findora - Reported Items</title>
+</head>
+<body>
+  <h1>Reported Items</h1>
+  <a href="/report">Report Lost/Found Item</a>
+  <ul>
+    {% for item in items %}
+      <li>
+        <strong>{{ item.name }}</strong><br>
+        {{ item.description }}<br>
+        <img src="{{ url_for('static', filename='uploads/' + item.image) }}" width="100">
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
